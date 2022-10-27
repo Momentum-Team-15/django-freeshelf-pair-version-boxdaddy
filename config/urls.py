@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# brings in admin structure from django library
 from django.contrib import admin
 from django.urls import path, include
+# imports views from freeshelf folder
 from freeshelf import views
 
 
-
+#sets up URL structure for the site 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),

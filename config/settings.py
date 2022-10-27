@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# adding registration that has built in login, logout and registration models for us 
 INSTALLED_APPS = [
     'registration',
     'django.contrib.admin',
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freeshelf',
 ]
-
+# added freeshelf and registration
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -125,7 +125,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'freeshelf.User'
-
+# this helps make sure the user is authenticated
 LOGIN_REDIRECT_URL = 'home'
-
+# this redirects users to the home page if not logged in
 LOGIN_URL = 'accounts/login'
+# this is built in from registration libary, we just used it to link the urls
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')
+]
