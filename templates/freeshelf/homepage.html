@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<h1> HOMEPAGE!!!! </h1> 
+{% for resource in resources %}
+
+<p><a href="{% url 'resource_detail' pk=resource.pk %}">{{ resource.title }}</a></p>
+<p> by {{ resource.author }} 
+
+{% endfor %}
+
+{% endblock %}
